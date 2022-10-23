@@ -1,10 +1,11 @@
 body {
   margin: 0;
-  font-family: -apple-system, 'Bebas Neue', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Bebas Neue', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 100;
 }
 
 code {
