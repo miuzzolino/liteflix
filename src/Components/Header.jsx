@@ -3,13 +3,13 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
-import NotesOutlinedIcon from '@mui/icons-material/NotesOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import * as React from 'react';
 import { Grid } from '@mui/material';
+import { MenuList } from './Menu';
+import { AddMovieButton } from './AddMovieButton';
 
 export default function Header() {
-
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
@@ -23,9 +23,7 @@ export default function Header() {
                             display: 'none',
                         }, display: 'flex', alignItems: 'center'
                     })}>
-                        <NotesOutlinedIcon sx={{
-                            transform: '180deg'
-                        }} />
+                        <MenuList />
                     </Grid>
                     <Typography variant="h4" component="div" sx={(theme) => ({
                         [theme.breakpoints.down("sm")]: {
@@ -41,27 +39,32 @@ export default function Header() {
                     </Typography>
                     <Grid sx={(theme) => ({
                         [theme.breakpoints.down("sm")]: {
+                            display: 'none'
+                        }, marginLeft: '64px', width: '100%' })}>
+                        <AddMovieButton />
+                    </Grid>
+                    <Grid sx={(theme) => ({
+                        [theme.breakpoints.down("sm")]: {
                             display: 'none',
                         }, display: 'flex', alignItems: 'center', position: 'relative'
                     })}>
-                        <NotesOutlinedIcon sx={{
-                            transform: '180deg',
-                            marginRight: '40px'
-                        }} />
+                        <MenuList />
                         <NotificationsOutlinedIcon sx={{
-                            marginRight: '40px'
+                            marginRight: '40px',
+                            zIndex: '10000'
                         }} />
                         <div style={{
-                            background: '#64EEBC', 
-                            borderRadius: '50%', 
-                            width: 9, 
-                            height: 9, 
+                            background: '#64EEBC',
+                            borderRadius: '50%',
+                            width: 9,
+                            height: 9,
                             position: 'absolute',
-                            top: 0,
-                            left: '60.5%'
+                            top: 10,
+                            left: '65.5%',
+                            zIndex: '10000'
                         }}></div>
                     </Grid>
-                    <Avatar />
+                    <Avatar sx={{ zIndex: '10000' }} />
                 </Toolbar>
             </AppBar>
         </Box>

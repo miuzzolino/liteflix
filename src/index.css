@@ -1,8 +1,14 @@
 @import url('https://fonts.cdnfonts.com/css/bebas-neue');
 body {
-  margin: 0;
+  margin: 0 !important;
+}
+
+body .MuiContainer-root{
   font-family: 'Bebas Neue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 100;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
 }
