@@ -12,7 +12,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ backgroundImage: `url(${background})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100vh' }}>
+      <div style={{ backgroundImage: `url(${background})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100%' }}>
       {loading && <Spinner />}
           <Grid sx={{maxWidth: '1200px', margin: 'auto', mb: 5}}>
           <Header/>
