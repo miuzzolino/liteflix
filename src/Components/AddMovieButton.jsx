@@ -14,13 +14,13 @@ const fileTypes = ["JPG", "PNG", "GIF"];
 
 function LinearProgressWithLabel(props) {
     return (
-        <Box sx={{
+        <Box sx={(theme) => ({[theme.breakpoints.down("sm")]: { width: '90%' },
             display: 'flex', width: '602px',
             alignItems: 'flex-start',
             flexDirection: 'column',
             margin: 'auto',
             height: '64px'
-        }}>
+        })}>
             <Box sx={{ minWidth: 35, letterSpacing: '4px', color: '#FFF' }}>
                 <Typography>{`CARGANDO ${Math.round(
                     props.value,
@@ -159,7 +159,7 @@ export const AddMovieButton = () => {
                             <CustomText>Liteflix The Movie fue correctamente subida.</CustomText>
                         </Grid>
                     }
-                    {!(file) &&
+                    {!upload &&
                         <InputBase
                             sx={{
                                 color: '#FFF', fontSize: '16px', letterSpacing: '4px',

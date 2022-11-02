@@ -13,7 +13,12 @@ export const CustomButton = styled(Button)({
     fontSize: '18px',
     width: '248px',
     height: '56px',
-    letterSpacing: '4px'
+    letterSpacing: '4px',
+    '&:hover': {
+        background: '#64EEBC',
+        border: 'solid #64EEBC 1px',
+        color: '#242424'
+    }
 })
 
 export const CustomText = styled(Typography)({

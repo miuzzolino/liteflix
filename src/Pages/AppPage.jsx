@@ -167,7 +167,7 @@ export const AppPage = () => {
                         </Paper>
                         )
                         :
-                        <CustomText>No subiste peliculas todavia</CustomText>
+                        <CustomText sx={{mt: 3, mb: 3}}>No subiste peliculas todavia</CustomText>
                     }
             </Grid>
         </>
