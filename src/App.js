@@ -14,7 +14,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div style={{ backgroundImage: `url(${background})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100%' }}>
       {loading && <Spinner />}
-          <Grid sx={{maxWidth: '1200px', margin: 'auto', mb: 5}}>
+          <Grid sx={{maxWidth: '1200px', margin: '0 auto', pb: 5}}>
           <Header/>
         <Grid sx={(theme) => ({
                 [theme.breakpoints.down("sm")]: {flexDirection: 'column', padding: 0}, display: 'flex', padding: '0 24px' })}>
