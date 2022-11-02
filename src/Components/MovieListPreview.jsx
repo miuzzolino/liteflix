@@ -76,7 +76,7 @@ export const MovieListPreview = () => {
                                 <StarOutlinedIcon sx={{ color: '#64EEBC', width: 12, height: 12, marginRight: '6px' }} />{movie.vote_average}
                             </CustomText>
                             <CustomText sx={{ fontSize: '14px' }}>
-                                {movie.release_date.slice(0, 4)}
+                                {movie.release_date?.slice(0, 4)}
                             </CustomText>
                         </Grid>
                     </Paper>
@@ -114,6 +114,6 @@ export const MovieListPreview = () => {
                     </Paper>
                 }
             </Paper>
-        )
+        ) 
     )
 }

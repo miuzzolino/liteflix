@@ -53,7 +53,7 @@ export const MenuList = () => {
                 })}>
                 {menuOptions.map((option, index) =>
                     option.field === 'add_movie' ?
-                        <MenuItem key={index} sx={{ margin: '22px 0' }} onClick={e => handleClose(e)}>
+                        <MenuItem key={index} sx={{ margin: '22px 0' }} >
                             {option.label}
                         </MenuItem>
                         :

@@ -1,4 +1,4 @@
-import { Button, Grid, ListItemIcon, Menu, MenuItem } from '@mui/material';
+import { Button, Grid, ListItemIcon, Menu, MenuItem, Paper } from '@mui/material';
 import { useContext, useState } from 'react';
 import '../App.css';
 import { PageContext } from '../Contexts/PageContext';
@@ -75,7 +75,7 @@ export const AppPage = () => {
                 <Grid sx={{ position: 'relative' }}>
                     {anchorEl &&
                         <Grid sx={(theme) => ({
-                            [theme.breakpoints.down("sm")]: { top: '-4px', left: '-50px'},
+                            [theme.breakpoints.down("sm")]: { top: '-4px', left: '-50px' },
                             width: '10px',
                             height: '10px',
                             position: 'absolute',
@@ -115,7 +115,60 @@ export const AppPage = () => {
                         </MenuItem>
                     </Menu>
                 </Grid>
-                <MovieListPreview />
+                {selected === 'POPULARES' ?
+                    <MovieListPreview /> 
+                    :
+                    JSON.parse(localStorage.getItem('files')) ?
+                    JSON.parse(localStorage.getItem('files')).map(movie =>
+                        <Paper key={movie.title} sx={(theme) => ({
+                            [theme.breakpoints.up("sm")]: {
+                                width: 220,
+                                height: 146
+                            },
+                            backgroundImage: `url(${movie.img})`,
+                            backgroundPosition: 'center',
+                            backgroundSize: 'cover',
+                            width: 327,
+                            height: 172,
+                            marginTop: '24px',
+                            borderRadius: '4px'
+                        })}>
+                            <Paper sx={(theme) => ({
+                                [theme.breakpoints.up("sm")]: {
+                                    width: 220,
+                                    height: 146
+                                },
+                                background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 22.78%, #000000 122.69%)',
+                                borderRadius: '4px',
+                                width: 327,
+                                height: 172,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'end',
+                                alignItems: 'center',
+                            })}>
+                                <PlayArrowOutlinedIcon fontSize='large' sx={(theme) => ({
+                                    [theme.breakpoints.up("sm")]: {
+                                        width: 40,
+                                        height: 40
+                                    },
+                                    marginBottom: '24px',
+                                    color: '#FFF',
+                                    background: 'rgba(36, 36, 36, 0.5)',
+                                    borderRadius: '50%',
+                                    border: 'solid 2px #FFF',
+                                    width: 48,
+                                    height: 48
+                                })} />
+                                <CustomText sx={{ marginBottom: '14px' }}>
+                                    {movie.title}
+                                </CustomText>
+                            </Paper>
+                        </Paper>
+                        )
+                        :
+                        <CustomText>No subiste peliculas todavia</CustomText>
+                    }
             </Grid>
         </>
     );

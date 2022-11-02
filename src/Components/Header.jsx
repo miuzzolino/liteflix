@@ -40,7 +40,8 @@ export default function Header() {
                     <Grid sx={(theme) => ({
                         [theme.breakpoints.down("sm")]: {
                             display: 'none'
-                        }, marginLeft: '64px', width: '100%' })}>
+                        }, marginLeft: '64px', width: '100%'
+                    })}>
                         <AddMovieButton />
                     </Grid>
                     <Grid sx={(theme) => ({
@@ -64,7 +65,7 @@ export default function Header() {
                             zIndex: '10000'
                         }}></div>
                     </Grid>
-                    <Avatar sx={{ zIndex: '10000' }} />
+                    <Avatar sx={(theme) => ({ [theme.breakpoints.up("sm")]: { zIndex: '10000' } })} />
                 </Toolbar>
             </AppBar>
         </Box>

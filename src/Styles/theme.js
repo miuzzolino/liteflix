@@ -24,7 +24,8 @@ export const CustomText = styled(Typography)({
 
 export const StyledModal = styled(Dialog)({
     '& .MuiPaper-root': {
-    minWidth: '730px', minHeight: '440px', background: '#242424', margin: 'auto'}
+        minWidth: '730px', minHeight: '440px', background: '#242424', margin: 'auto'
+    }
 })
 
 export const StyledMenu = styled((props) => (
@@ -63,6 +64,6 @@ export const StyledMenu = styled((props) => (
                 fontWeight: '700',
             },
         },
-}
+    }
 }));
 
